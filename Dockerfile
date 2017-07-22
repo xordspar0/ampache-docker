@@ -16,11 +16,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 php5 php5-json php
 
 # Install Ampache.
 ADD https://github.com/ampache/ampache/releases/download/${AMPACHE_VERSION}/ampache-${AMPACHE_VERSION}_all.zip /tmp/ampache.zip
-RUN rm /var/www/html/* && \
-	unzip /tmp/ampache.zip -d /var/www/html && \
+RUN rm -r /var/www/html && \
+	unzip /tmp/ampache.zip -d /var/www/ && \
 	rm /tmp/ampache.zip && \
 	chown -R www-data /var/www
-ADD ampache.cfg.php.dist /var/temp/ampache.cfg.php.dist
 ADD run.sh /run.sh
 RUN chmod 755 /run.sh
 
