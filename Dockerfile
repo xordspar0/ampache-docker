@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER xordspar0
 
-ENV AMPACHE_VERSION 3.8.3
+ENV AMPACHE_VERSION 3.8.6
 
 RUN echo 'deb http://download.videolan.org/pub/debian/stable/ /' >> /etc/apt/sources.list
 RUN echo 'deb-src http://download.videolan.org/pub/debian/stable/ /' >> /etc/apt/sources.list
